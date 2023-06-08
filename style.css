@@ -1,0 +1,257 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+ul{
+  list-style: none;
+}
+
+/*variaves*/
+:root{
+  --header-height: 3.8rem;
+
+ /*Cor primaria*/
+ --hue: 200;
+ /*  hsl color mode*/
+ --base-color: hsl(var(--hue) 36% 57%);
+ --base-color-second: hsl(var(--hue) 63% 88%);
+ --base-color-alt: hsl(var(--hue) 57% 53%);
+ --title-color: hsl(var(--hue) 41% 10%);
+ --text-color: hsl(0 0% 46%);
+ --text-color-light: hsl(0 0% 98%);
+ --body-color: hsl(0 0% 98%); 
+
+  /*fonts*/
+  --title-font-size: 1.5rem;
+  --subtitle-font-size: 1rem;
+
+  --title-fonts: 'Poppins', sans-serif;
+  --body-fonts: 'DM Sams', sans-serif;
+}
+
+body{
+  font: 400 2rem var(--body-font);
+  color: var(--text-color);
+  background:var(--body-color);
+}
+
+.title{
+  font: 700 var(--title-font-size) var(--title-fonts);
+  color: var(--title-color);
+  -webkit-font-smoothing:auto; 
+}
+
+/*layout*/
+.conteiner{
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid{
+  display: grid;
+  gap: 2rem;
+}
+
+.section {
+  padding: calc(2rem + var(--header-height)) 0;
+}
+
+.section .title{
+  margin-bottom: 1rem;
+}
+
+/*header*/
+#header{
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 2rem;
+
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--text-color-light);
+
+  padding: 1rem 0;
+}
+
+#header.scroll{
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+/*logo*/
+.logo{
+  font:700 1.31rem var(--title-fonts);
+  color:var(var(--title-color))
+}
+
+.logo span{
+  color:var(--base-color-alt);
+}
+
+
+/*navegaçao*/
+nav{
+  height:var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul li{
+  text-align: center;
+}
+
+nav .menu{
+  opacity: 0;
+  visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
+}
+/*mudança e cor*/
+nav ul li a{
+  transition: color 0.25s;
+  position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+color: var(--base-color-alt)
+}
+
+/*animaçao linha*/
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--base-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+  transition: width 0.25s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+nav .menu ul {
+  display: none;
+}
+
+/* show menu*/
+nav.show .menu{
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--text-color-light);
+
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed; 
+  top:0;
+  left: 0;
+  
+  display: grid;
+  place-content: center;
+  }
+
+  nav.show .menu ul{
+    display: grid;
+  }
+
+  nav.show ul.grid{
+    gap: 4rem;
+  }
+
+  /*toogle menu*/
+.toggle{
+  color: var(--base-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+nav .icon-cross {
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  right: 1.5rem;
+  /*trasiçao legal*/
+
+  transition: 0.2s;
+  top: -1.5rem;
+}
+
+nav.show div.icon-cross {
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
+}
+
+/*trabalho*/
+#trabalho{
+  overflow: hidden;
+}
+
+#trabalho .conteiner{
+  margin: 1.5rem;
+}
+
+#trabalho span{
+  padding-left: 1.5rem;
+}
+#trabalho div img{
+  margin-top: 1rem;
+}
+
+/*cards*/
+.cards.grid{
+  gap: 1.5rem;
+}
+
+.card{
+  padding: 2rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.88);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0 ;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.card .title {
+  font-size: 1.2rem;
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 1rem;
+}
+
+.cardinterno{
+  display: flex;
+}
+
+.card img{
+  width: 8rem;
+  height: 10rem;
+  margin-right: 2.5rem;
+}
+
+.card p{
+  font-size: 0.98rem;
+  justify-content: center;
+}
