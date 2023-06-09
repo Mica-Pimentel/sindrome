@@ -221,7 +221,26 @@ nav.show div.icon-cross {
   margin-top: 1rem;
 }
 
+
+/*filmes*/
+#filmes  div.video{
+position: relative;
+margin-bottom: 20rem;
+}
+
+#filmes div.video > iframe{
+position: absolute;
+width: 100%;
+margin-bottom:2rem ;
+top:0;
+left: 0;
+}
+
+
 /*cards*/
+#livros{
+  margin-top: -8rem;
+}
 .cards.grid{
   gap: 1.5rem;
 }
@@ -243,15 +262,23 @@ nav.show div.icon-cross {
 
 .cardinterno{
   display: flex;
+  
 }
 
 .card img{
-  width: 8rem;
-  height: 10rem;
+  width: 10rem;
+  height: 12rem;
   margin-right: 2.5rem;
 }
 
 .card p{
   font-size: 0.98rem;
   justify-content: center;
+}
+
+
+/*filmes*/
+filmes .cardinterno{
+  display: block;
+  
 }
