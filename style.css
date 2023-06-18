@@ -34,7 +34,7 @@ ul{
 
   /*fonts*/
   --title-font-size: 1.5rem;
-  --subtitle-font-size: 1rem;
+  --subtitle-font-size: 1.188rem;
 
   --title-fonts: 'Poppins', sans-serif;
   --body-fonts: 'DM Sams', sans-serif;
@@ -73,6 +73,24 @@ color: var(--base-color-alt);
 
 .button:hover {
   background: var(--base-color-alt);
+}
+
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34)
+  );
+}
+
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
+  );
 }
 
 /*layout*/
@@ -123,7 +141,6 @@ color: var(--base-color-alt);
 .logo span{
   color:var(--base-color-alt);
 }
-
 
 /*navegaçao*/
 nav{
@@ -240,19 +257,27 @@ nav.show div.icon-cross {
 #trabalho span{
   padding-left: 1.5rem;
 }
-#trabalho div img{
-  margin-top: 1rem;
+
+#trabalho div .image { 
+  text-align: center;
 }
 
+#trabalho div img{
+  margin-top: 1rem;
+  max-width:50rem ;
+}
 
 /*podcast*/
+#podcast .pod{
+  max-width:40rem
+}
 #podcast ul li a i{
-  color: var(--text-color
-  );
+  color: var(--text-color);
+  font-size: 1.2rem;
 }
 
 /*filmes*/
-#filmes  div.video{
+#filmes  div .video{
 position: relative;
 margin-bottom: 20rem;
 }
@@ -261,14 +286,15 @@ margin-bottom: 20rem;
 position: absolute;
 width: 100%;
 margin-bottom:2rem ;
+margin-top: 1.5rem;
 top:0;
 left: 0;
+max-width:40rem;
 }
-
 
 /*cards*/
 #livros{
-  margin-top: -8rem;
+  margin-top: 1rem;
 }
 .cards.grid{
   gap: 1.5rem;
@@ -281,7 +307,7 @@ left: 0;
   border-radius: 0.25rem 0.25rem 0 0 ;
   text-align: center;
   gap: 0.75rem;
-  max-width: 50rem;
+  max-width: 40rem;
 }
 
 .card .title {
@@ -310,5 +336,104 @@ left: 0;
 /*filmes*/
 filmes .cardinterno{
   display: block;
-  
 }
+
+/*guias alimentares*/
+#guia-alimentar ul li a i{
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+#guia-alimentar ul {
+  display: grid;
+  gap: 2.5rem;
+}
+
+/*media queiries*/
+/*large devices 800px>*/
+@media(min-width:800px){
+  :root {
+    --title-font-size: 2.2rem;
+    --subtitle-font-size: 1.5rem;
+    
+  }
+
+  .conteiner{
+    margin-left:auto; 
+    margin-right:auto;
+    
+  }
+
+  .section{
+    padding: 5rem 2rem;
+  } 
+
+  body{
+    font-size: 1.5rem;
+  }
+  
+  header nav.conteiner {
+    margin: auto 2.5rem;
+  }
+
+  header nav .logo{
+    font-size: var(--title-font-size);
+  }
+
+  header nav ul li a.title{
+    font-size:var(--subtitle-font-size);
+  }
+
+  /*livros*/
+  #livros .cards{
+   grid-template-columns: 1fr 1fr;
+  }
+
+}
+@media(min-width:900px){
+  #livros .cards{
+    grid-template-columns: 1fr 1fr;
+   }
+}
+/*extra large devices 1000px>*/
+@media(min-width:1000px){
+
+  .section{
+    padding: 8rem 5rem;
+  } 
+
+  header nav.conteiner {
+   margin: auto 2.5rem;
+  }
+
+  /*menu*/
+nav .menu{
+  opacity: 1;
+  visibility: visible;
+  top: 0;
+}
+
+nav .menu ul{
+  display: flex;
+  gap: 2rem;
+}
+
+nav .menu ul li a.title {
+  font: 400 1rem var(--body-fonts);
+  -webkit-font-smoothing: antialiased;
+}
+
+nav .menu ul li a.title.ative {
+  font-weight: bold;
+  -webkit-font-smoothing: auto;
+}
+
+nav .icon-menu {
+  display: none;
+}
+
+/*livros*/
+#livros .cards{
+  grid-template-columns: 1fr 1fr 1fr;
+ }
+} 
