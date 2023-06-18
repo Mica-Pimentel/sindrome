@@ -349,6 +349,50 @@ filmes .cardinterno{
   gap: 2.5rem;
 }
 
+
+/*footer*/
+footer{
+  background: var(--base-color);
+}
+
+footer.section{
+  padding: 0.75rem 0;
+}
+
+footer .title{
+  display: inline-block;
+  font-size: 1.5rem;
+}
+
+footer .brand p {
+  color: var(--text-color-light);
+  margin-bottom: 0.75rem;
+}
+
+footer i {
+  color: var(--text-color-light);
+  font-size: 1.5rem;
+}
+
+footer .social {
+  grid-auto-flow: column;
+  width: fit-content;
+}
+
+footer .social a {
+  transition: 0.3s;
+  display: inline-block;
+}
+
+footer .social a:hover {
+  transform: translateY(-8px);
+}
+
+footer .nomeparticipantes ul{
+  color: var(--text-color-light);
+}
+
+
 /*media queiries*/
 /*large devices 800px>*/
 @media(min-width:800px){
@@ -394,7 +438,21 @@ filmes .cardinterno{
   #livros .cards{
     grid-template-columns: 1fr 1fr;
    }
+   
+  footer .conteiner{
+    display: flex;
+    padding: 1rem  4rem;
+    gap: 20rem;
+  } 
+
+  footer .conteiner div.nomeparticipantes ul li{
+    font-size: 0.899999rem;
+  }
+
 }
+
+
+
 /*extra large devices 1000px>*/
 @media(min-width:1000px){
 
@@ -436,4 +494,6 @@ nav .icon-menu {
 #livros .cards{
   grid-template-columns: 1fr 1fr 1fr;
  }
+
+ 
 } 
